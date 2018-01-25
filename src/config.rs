@@ -18,7 +18,7 @@ pub fn parse_config(content: &String) -> Result<(ConfigDocument), Error> {
 
     let config: ConfigDocument = serde_json::from_str(data)?;
 
-    println!("loading Shit with ip {}:{} \n {} threads \n at {} ", config.ip, config.port, config.port, config.document_root);
+    println!("loading Shit with ip {}:{} \n {} threads \n at {} ", config.ip, config.port, config.threads, config.document_root);
 
     Ok(config)
 }
