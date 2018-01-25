@@ -35,8 +35,6 @@ fn handle_connection(request: Request) {
 
 fn main() {
 
-    // let filename = "/home/tom/test.txt";
-    //println!("with text:{}", read_file(filename).unwrap());
     let config_path: String = "/home/tom/config.json".to_string();
     let config: ConfigDocument = parse_config(&config_path);
     let pool = ThreadPool::new(config.threads);
