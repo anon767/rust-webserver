@@ -41,7 +41,8 @@ fn main() {
     let config: ConfigDocument = parse_config(&config_path);
     let pool = ThreadPool::new(config.threads);
 
-    let server = Server::http("0.0.0.0:8000").unwrap();
+    let server = Server::http(format!("{}:{}",config.ip,config.port)).unwrap();
+
 
     for request in server.incoming_requests() {
         pool.execute(|| {
